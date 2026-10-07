@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Compass, Save, Plus, Trash2, Image, ListChecks, Clock, MapPin, DollarSign, Calendar } from 'lucide-react';
 import { Excursion, Destination, PublicationStatus } from '../../../types';
+import { ImageUploadInput } from './ImageUploadInput';
 
 interface ExcursionFormModalProps {
   excursion: Excursion | null; // null for creation or prefilled if duplicating
@@ -531,56 +532,49 @@ export const ExcursionFormModal: React.FC<ExcursionFormModalProps> = ({
           {activeTab === 'media' && (
             <div className="space-y-4 animate-in fade-in">
               <div>
-                <label className="block text-white/80 font-bold mb-1">Image principale (Couverture) *</label>
-                <div className="flex gap-3">
-                  <input
-                    type="text"
-                    required
-                    value={coverImageUrl}
-                    onChange={(e) => setCoverImageUrl(e.target.value)}
-                    placeholder="/images/... ou URL https://"
-                    className="flex-1 bg-white/5 border border-white/15 rounded-xl p-3 text-sm text-white font-mono"
-                  />
-                  {coverImageUrl && (
-                    <img src={coverImageUrl} alt="cover" className="w-14 h-12 rounded-xl object-cover border border-[#C99A4A]" />
-                  )}
-                </div>
+                <ImageUploadInput
+                  label="Image principale (Couverture) *"
+                  value={coverImageUrl}
+                  onChange={setCoverImageUrl}
+                  placeholder="/images/... ou URL https://"
+                  folder="excursions"
+                />
               </div>
 
-              <div>
-                <label className="block text-white/80 font-bold mb-1">Galerie d'images complémentaires</label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
-                  {galleryUrls.map((url, idx) => (
-                    <div key={idx} className="relative group rounded-xl overflow-hidden border border-white/10 h-24">
-                      <img src={url} alt={`gal-${idx}`} className="w-full h-full object-cover" />
-                      <button
-                        type="button"
-                        onClick={() => setGalleryUrls(galleryUrls.filter((_, i) => i !== idx))}
-                        className="absolute top-1 right-1 p-1 bg-black/70 rounded-full text-red-400 hover:text-red-300"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+              <div className="pt-2">
+                <label className="block text-white/80 font-bold mb-2 text-xs uppercase tracking-wider text-[#A39B8B]">
+                  Galerie d'images complémentaires
+                </label>
+                {galleryUrls.length > 0 && (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                    {galleryUrls.map((url, idx) => (
+                      <div key={idx} className="relative group rounded-xl overflow-hidden border border-white/10 h-24 bg-black/40">
+                        <img src={url} alt={`gal-${idx}`} className="w-full h-full object-cover" />
+                        <button
+                          type="button"
+                          onClick={() => setGalleryUrls(galleryUrls.filter((_, i) => i !== idx))}
+                          className="absolute top-1 right-1 p-1.5 bg-black/80 hover:bg-rose-600 rounded-full text-white transition-colors"
+                          title="Supprimer cette photo"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newGalleryUrl}
-                    onChange={(e) => setNewGalleryUrl(e.target.value)}
-                    placeholder="Ajouter une URL d'image pour la galerie..."
-                    className="flex-1 bg-white/5 border border-white/15 rounded-xl p-2.5 text-xs text-white font-mono"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleAddGalleryImage}
-                    className="px-4 py-2 bg-white/10 hover:bg-white/15 text-white rounded-xl text-xs font-semibold flex items-center gap-1"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                    <span>Ajouter photo</span>
-                  </button>
-                </div>
+                <ImageUploadInput
+                  label="Ajouter une photo à la galerie"
+                  value={newGalleryUrl}
+                  onChange={(url) => {
+                    if (url) {
+                      setGalleryUrls([...galleryUrls, url]);
+                      setNewGalleryUrl('');
+                    }
+                  }}
+                  placeholder="Collez une URL ou téléversez une photo..."
+                  folder="excursions/gallery"
+                />
               </div>
             </div>
           )}

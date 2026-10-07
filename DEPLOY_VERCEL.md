@@ -21,21 +21,21 @@ Le projet est structuré sous forme de monorepo optimisé pour Vercel :
 
 ---
 
-## 🗄️ Étape 1 : Obtenir une Base de Données Cloud Gratuite
+## 🗄️ Étape 1 : Créer votre Base de Données Neon (Gratuit & Instantané)
 
-En production sur Vercel, l'API ne peut pas se connecter à votre base locale `localhost:3308`. Il vous faut une URL de base de données accessible sur Internet.
+Le projet est configuré nativement avec **PostgreSQL** pour **Neon** (`prisma/schema.prisma`).
 
-### Option A — Railway (MySQL / MariaDB - Recommandé, 100% compatible sans changement)
-1. Rendez-vous sur [railway.com](https://railway.com) et créez un compte.
-2. Cliquez sur **New Project** > **Provision MySQL**.
-3. Dans l'onglet **Variables** ou **Connect**, copiez l'URL de connexion :
-   `DATABASE_URL="mysql://root:motdepasse@mon-hote.railway.app:3306/railway"`
-
-### Option B — Supabase ou Neon (PostgreSQL)
-Si vous préférez PostgreSQL :
-1. Créez un projet sur [supabase.com](https://supabase.com) ou [neon.tech](https://neon.tech).
-2. Dans le fichier [`backend/prisma/schema.prisma`](file:///c:/Senegal%20Top%20tour/backend/prisma/schema.prisma), remplacez `provider = "mysql"` par `provider = "postgresql"`.
-3. Récupérez votre URL `DATABASE_URL` (ex: `postgresql://postgres:motdepasse@db.xxx.supabase.co:5432/postgres`).
+1. Rendez-vous sur **[neon.tech](https://neon.tech)** et créez un compte gratuit (avec GitHub ou Google).
+2. Cliquez sur **Create Project** et nommez-le par exemple `senegal-top-tour`.
+3. Sur votre tableau de bord Neon, dans la section **Connection Details**, sélectionnez :
+   - Branch : `main`
+   - Database : `neondb`
+   - Role : `neondb_owner`
+4. Copiez votre chaîne de connexion **Connection string** (Postgres) :
+   ```env
+   DATABASE_URL="postgresql://neondb_owner:VOTRE_MOT_DE_PASSE@ep-cool-fog-123456.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+   ```
+*(Note : La base est immédiatement active sans aucune installation supplémentaire).*
 
 ---
 
@@ -100,6 +100,13 @@ git push -u origin main
 | `ADMIN_DEFAULT_PASSWORD` | `2004` | Mot de passe de l'administrateur |
 | `WHATSAPP_PHONE` | `+221778848029` | Numéro WhatsApp officiel pour contact direct |
 | `CORS_ORIGIN` | `*` | Origine autorisée pour l'API |
+| `CLOUDINARY_CLOUD_NAME` | `votre_cloud_name` | Nom de votre Cloud sur Cloudinary |
+| `CLOUDINARY_API_KEY` | `123456789012345` | Clé API Cloudinary |
+| `CLOUDINARY_API_SECRET` | `AbCdEfGhIjKlMnOpQrStUvWxYz` | Clé secrète API Cloudinary |
+| `CLOUDINARY_FOLDER` | `senegal_top_tour` | Dossier de stockage des médias (optionnel) |
+
+> 💡 **Où trouver vos identifiants Cloudinary ?**
+> Connectez-vous sur [cloudinary.com](https://cloudinary.com/console) $\to$ Tableau de bord (**Dashboard**) $\to$ Copiez **Cloud Name**, **API Key** et **API Secret** (ou l'URL complète `CLOUDINARY_URL`).
 
 5. Cliquez sur **Deploy**.
 

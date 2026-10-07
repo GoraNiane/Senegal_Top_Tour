@@ -13,12 +13,19 @@
     "prisma:push": "prisma db push",
     "prisma:seed": "tsx src/seed.ts"
   },
-  "keywords": ["senegal", "tourism", "api", "express", "prisma"],
+  "keywords": [
+    "senegal",
+    "tourism",
+    "api",
+    "express",
+    "prisma"
+  ],
   "author": "Senegal Top Tour",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.11.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

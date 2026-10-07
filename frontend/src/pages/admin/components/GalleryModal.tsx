@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Image, Save } from 'lucide-react';
 import { GalleryImage } from '../../../types';
+import { ImageUploadInput } from './ImageUploadInput';
 
 interface GalleryModalProps {
   image: GalleryImage | null;
@@ -129,20 +130,13 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-white/80 font-bold mb-1">URL de l'image *</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                required
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                placeholder="/images/... ou https://"
-                className="flex-1 bg-white/5 border border-white/15 rounded-xl p-3 text-sm text-white font-mono focus:outline-none focus:border-[#C99A4A]"
-              />
-              {imageUrl && (
-                <img src={imageUrl} alt="preview" className="w-12 h-11 rounded-lg object-cover border border-white/20" />
-              )}
-            </div>
+            <ImageUploadInput
+              label="URL ou Téléversement Photo *"
+              value={imageUrl}
+              onChange={setImageUrl}
+              placeholder="/images/... ou https://"
+              folder="gallery"
+            />
           </div>
 
           <div>

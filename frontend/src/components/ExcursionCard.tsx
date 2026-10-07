@@ -40,6 +40,10 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ excursion, classNa
           src={coverImage}
           alt={excursion.name}
           loading="lazy"
+          decoding="async"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = '/images/goree0.jpg';
+          }}
           className="w-full h-full object-cover transform scale-100 group-hover:scale-108 transition-transform duration-700 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/30 pointer-events-none" />

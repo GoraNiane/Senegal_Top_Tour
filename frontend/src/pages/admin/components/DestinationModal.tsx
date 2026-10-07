@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, MapPin, Sparkles, Save, Image, Tag, Plus, Trash2 } from 'lucide-react';
 import { Destination, PublicationStatus } from '../../../types';
+import { ImageUploadInput } from './ImageUploadInput';
 
 interface DestinationModalProps {
   destination: Destination | null; // null for creation
@@ -220,20 +221,13 @@ export const DestinationModal: React.FC<DestinationModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-white/80 font-bold mb-1">Image URL</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                required
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                placeholder="/images/... ou URL https://"
-                className="flex-1 bg-white/5 border border-white/15 rounded-xl p-3 text-sm text-white font-mono focus:outline-none focus:border-[#C99A4A]"
-              />
-              {imageUrl && (
-                <img src={imageUrl} alt="preview" className="w-12 h-11 rounded-lg object-cover border border-white/20" />
-              )}
-            </div>
+            <ImageUploadInput
+              label="Image de la Destination"
+              value={imageUrl}
+              onChange={setImageUrl}
+              placeholder="/images/... ou URL https://"
+              folder="destinations"
+            />
           </div>
 
           {/* Highlights editor */}

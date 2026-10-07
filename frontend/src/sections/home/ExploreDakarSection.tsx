@@ -43,7 +43,11 @@ export const ExploreDakarSection: React.FC = () => {
                 <img
                   src={exc.imageUrl}
                   alt={exc.title}
-                  loading="lazy"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/goree0.jpg';
+                  }}
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-106 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />

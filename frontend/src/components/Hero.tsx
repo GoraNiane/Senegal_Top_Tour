@@ -20,11 +20,19 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] max-h-[960px] flex items-center justify-start overflow-hidden bg-[#151515] text-white">
       {/* Official hero.png Background Image from Project */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#151515]">
         <img
           src={heroImg || '/hero.png'}
-          alt="Île de Gorée — SENEGAL TOP TOUR"
-          className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.03] transition-all duration-1000"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          // @ts-ignore
+          fetchpriority="high"
+          className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.03] transition-opacity duration-700"
+          onError={(e) => {
+            (e.target as HTMLElement).style.opacity = '0';
+          }}
         />
       </div>
 

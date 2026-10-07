@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Sparkles, Save, Tag, Plus, Trash2 } from 'lucide-react';
 import { Experience } from '../../../types';
+import { ImageUploadInput } from './ImageUploadInput';
 
 interface ThemeModalProps {
   experience: Experience | null;
@@ -186,19 +187,12 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-white/80 font-bold mb-1">URL de l'image *</label>
-            <div className="flex gap-2">
-              <input
-                type="text"
-                required
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                className="flex-1 bg-white/5 border border-white/15 rounded-xl p-3 text-sm text-white font-mono focus:outline-none focus:border-[#C99A4A]"
-              />
-              {imageUrl && (
-                <img src={imageUrl} alt="preview" className="w-12 h-11 rounded-lg object-cover border border-white/20" />
-              )}
-            </div>
+            <ImageUploadInput
+              label="URL ou Téléversement Image *"
+              value={imageUrl}
+              onChange={setImageUrl}
+              folder="themes"
+            />
           </div>
 
           {/* Highlights */}

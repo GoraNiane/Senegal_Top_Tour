@@ -48,6 +48,7 @@ import {
   getNewsletterSubscribers,
 } from '../controllers/newsletterController.js';
 import { getDashboardStats } from '../controllers/adminController.js';
+import { uploadImage, getUploadStatus } from '../controllers/uploadController.js';
 import { requireAuth, requireRole } from '../middleware/auth.js';
 import { validateBody } from '../middleware/validate.js';
 import { loginSchema } from '../validators/authValidator.js';
@@ -131,5 +132,10 @@ router.delete('/admin/messages/:id', requireAuth, requireRole(['ADMIN']), delete
 
 // Newsletter Subscribers
 router.get('/admin/newsletter', requireAuth, requireRole(['ADMIN', 'EDITOR']), getNewsletterSubscribers);
+
+// Media & Cloudinary Upload
+router.get('/upload/status', getUploadStatus);
+router.post('/admin/upload', requireAuth, requireRole(['ADMIN', 'EDITOR']), uploadImage);
+router.post('/upload', requireAuth, uploadImage);
 
 export default router;

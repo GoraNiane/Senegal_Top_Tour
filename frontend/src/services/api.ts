@@ -825,5 +825,47 @@ export const api = {
       });
       return await res.json();
     },
+
+    // 11. Cloudinary Image Upload
+    getUploadStatus: async () => {
+      try {
+        const res = await fetch(`${API_BASE}/upload/status`);
+        return await res.json();
+      } catch (e) {
+        return { success: false, configured: false };
+      }
+    },
+
+    uploadImage: async (base64OrUrl: string, folder: string = 'media') => {
+      const res = await fetch(`${API_BASE}/admin/upload`, {
+        method: 'POST',
+        headers: api.admin.getAuthHeaders(),
+        body: JSON.stringify({ image: base64OrUrl, folder }),
+      });
+      return await res.json();
+    },
+
+    uploadFile: async (file: File, folder: string = 'media'): Promise<{ success: boolean; url?: string; message?: string }> => {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = async () => {
+          try {
+            const base64 = reader.result as string;
+            const res = await api.admin.uploadImage(base64, folder);
+            if (res.success && res.data?.url) {
+              resolve({ success: true, url: res.data.url });
+            } else {
+              resolve({ success: false, message: res.message || 'Échec du téléversement vers Cloudinary' });
+            }
+          } catch (err: any) {
+            resolve({ success: false, message: err?.message || 'Erreur lors de l\'envoi du fichier' });
+          }
+        };
+        reader.onerror = () => {
+          resolve({ success: false, message: 'Impossible de lire le fichier image' });
+        };
+        reader.readAsDataURL(file);
+      });
+    },
   },
 };
