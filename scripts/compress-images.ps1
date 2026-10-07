@@ -4,8 +4,8 @@ function Compress-ImageFile {
     param(
         [string]$InputPath,
         [string]$OutputPath,
-        [int]$MaxWidth = 1400,
-        [long]$Quality = 85L
+        [int]$MaxWidth = 1200,
+        [long]$Quality = 80L
     )
 
     if (-not (Test-Path $InputPath)) {
@@ -39,7 +39,7 @@ function Compress-ImageFile {
     $img.Dispose()
     $graph.Dispose()
 
-    # Find JPEG / PNG Encoder
+    # Find JPEG Encoder
     $codec = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.FormatDescription -eq "JPEG" }
     $encoderParams = New-Object System.Drawing.Imaging.EncoderParameters(1)
     $encoderParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter([System.Drawing.Imaging.Encoder]::Quality, $Quality)
@@ -64,17 +64,16 @@ $images = @(
     "frontend/public/images/hero.png",
     "frontend/public/hero.png",
     "frontend/src/assets/hero.png",
+    "frontend/src/assets/Dakar.png",
+    "frontend/src/assets/Dakar4.png",
+    "frontend/src/assets/Dakar5.png",
     "frontend/public/images/hero-goree-sunset.jpg"
 )
 
 foreach ($img in $images) {
     $fullPath = (Resolve-Path $img -ErrorAction SilentlyContinue)
     if ($fullPath) {
-        $backup = $fullPath.Path + ".bak"
-        if (-not (Test-Path $backup)) {
-            Copy-Item $fullPath.Path $backup
-        }
-        Compress-ImageFile -InputPath $backup -OutputPath $fullPath.Path -MaxWidth 1400 -Quality 84L
+        Compress-ImageFile -InputPath $fullPath.Path -OutputPath $fullPath.Path -MaxWidth 1200 -Quality 80L
     }
 }
 
