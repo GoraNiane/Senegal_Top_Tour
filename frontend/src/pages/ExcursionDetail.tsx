@@ -84,7 +84,7 @@ export const ExcursionDetail: React.FC = () => {
           '@type': 'TravelAgency',
           name: 'Senegal Top Tour',
           url: 'https://senegaltoptour.sn',
-          telephone: '+221 77 000 00 00',
+          telephone: '+221 77 884 80 29',
         },
       };
 
@@ -176,7 +176,7 @@ export const ExcursionDetail: React.FC = () => {
 
   // WhatsApp pre-filled concierge message
   const whatsappMessage = `Bonjour SENEGAL TOP TOUR,\n\nJe souhaite réserver ou obtenir des informations concernant l'excursion :\n✨ *${excursion.name}*\n\n📅 Date souhaitée :\n👥 Nombre de personnes :\n🏨 Lieu de prise en charge (Hôtel / Dakar) :\n\nMerci d'avance pour votre retour personnalisé.`;
-  const whatsappUrl = `https://wa.me/221770000000?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/221778848029?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <PageTransition>

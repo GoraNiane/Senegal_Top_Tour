@@ -9,12 +9,12 @@ export const SITE_CONFIG = {
   description: "Plateforme touristique d'exception : excursions privatisées, voyages à thèmes et tourisme solidaire au Sénégal.",
   
   // WhatsApp Configuration (utilise la variable d'env si fournie, sinon valeur officielle)
-  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || '+221 77 000 00 00',
-  whatsappRawNumber: (import.meta.env.VITE_WHATSAPP_NUMBER || '221770000000').replace(/[^0-9]/g, ''),
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || '+221 77 884 80 29',
+  whatsappRawNumber: (import.meta.env.VITE_WHATSAPP_NUMBER || '221778848029').replace(/[^0-9]/g, ''),
   
   // Contact
   email: import.meta.env.VITE_CONTACT_EMAIL || 'contact@senegaltoptour.com',
-  phoneDisplay: '+221 77 000 00 00',
+  phoneDisplay: '+221 77 884 80 29',
   address: "Presqu'île du Cap-Vert, Dakar · Sénégal",
   hours: '7j/7 de 08h00 à 20h00 (GMT)',
   

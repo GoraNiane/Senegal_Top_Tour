@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 text-xs text-white/80 font-light leading-relaxed">
               <p className="text-white font-medium">SENEGAL TOP TOUR</p>
               <p>Presqu'île du Cap-Vert, Dakar · Sénégal</p>
-              <p>Ligne Directe : <span className="text-[#C99A4A] font-mono">+221 77 000 00 00</span></p>
+              <p>Ligne Directe : <span className="text-[#C99A4A] font-mono">+221 77 884 80 29</span></p>
               <p>E-mail : contact@senegaltoptour.com</p>
               <p className="text-[11px] text-white/60">Ouvert 7j/7 de 8h00 à 20h00 (GMT)</p>
             </div>
