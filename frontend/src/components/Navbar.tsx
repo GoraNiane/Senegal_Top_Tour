@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, Calendar, ChevronDown } from 'lucide-react';
 import { Logo } from './Logo';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { AnnouncementTicker } from './AnnouncementTicker';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
@@ -88,16 +89,21 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent
-          ? 'bg-gradient-to-b from-black/70 via-black/30 to-transparent text-white py-4 sm:py-5'
-          : 'bg-[#151515]/95 backdrop-blur-md text-white py-3.5 shadow-md border-b border-white/10'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Logo variant="light" size="md" />
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      {/* Dynamic Announcement Ticker on Top */}
+      <AnnouncementTicker />
+
+      {/* Main Navbar Bar */}
+      <div
+        className={`transition-all duration-300 ${
+          isTransparent
+            ? 'bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white py-3.5 sm:py-4'
+            : 'bg-[#151515]/95 backdrop-blur-md text-white py-3 shadow-md border-b border-white/10'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Brand Logo */}
+          <Logo variant="light" size="md" />
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-7">
@@ -287,10 +293,11 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
       </div>
+    </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[60px] bg-[#151515]/98 backdrop-blur-xl z-40 text-white px-6 py-8 flex flex-col justify-between overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 bottom-0 top-[92px] sm:top-[98px] bg-[#151515]/98 backdrop-blur-xl z-40 text-white px-6 py-8 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-3">
             {[
               { name: t.nav.home, path: '/' },
