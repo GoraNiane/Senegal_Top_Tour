@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Sun & Horizon -->
+  <circle cx="50" cy="50" r="44" stroke="#C99A4A" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+  <!-- Golden Sun -->
+  <circle cx="50" cy="46" r="16" fill="url(#sunGrad)"/>
+  <!-- Stylized Pirogue / Dune Wave -->
+  <path d="M22 62C34 68 66 68 78 62C72 72 28 72 22 62Z" fill="#173C32"/>
+  <path d="M26 62C36 67 64 67 74 62" stroke="#C7A77A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Baobab Branch / Sun Ray -->
+  <path d="M50 22V14M50 86V78M14 50H22M78 50H86M24 24L30 30M70 70L76 76M24 76L30 70M70 30L76 24" stroke="#C99A4A" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="sunGrad" x1="50" y1="30" x2="50" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C99A4A"/>
+      <stop offset="1" stop-color="#A85D3A"/>
+    </linearGradient>
+  </defs>
+</svg>

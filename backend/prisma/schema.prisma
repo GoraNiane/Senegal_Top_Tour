@@ -1,0 +1,189 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN") // ADMIN, EDITOR
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Destination {
+  id          String      @id @default(uuid())
+  name        String
+  slug        String      @unique
+  subtitle    String?
+  description String      @db.Text
+  imageUrl    String      @default("/images/dakar.png")
+  category    String      @default("Culture")
+  status      String      @default("PUBLISHED") // DRAFT, UPCOMING, PUBLISHED, ARCHIVED
+  region      String      @default("Sénégal")
+  highlights  String?     @db.Text // JSON string or comma-separated list
+  latitude    Float?
+  longitude   Float?
+  isFeatured  Boolean     @default(false)
+  order       Int         @default(0)
+  excursions  Excursion[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Excursion {
+  id               String           @id @default(uuid())
+  name             String
+  slug             String           @unique
+  subtitle         String?
+  description      String           @db.Text
+  fullContent      String?          @db.Text
+  duration         String // e.g. "1/2 journée (8h30 - 12h00)", "1 journée", "3 jours / 2 nuits"
+  durationCategory String           @default("half_day") // "half_day", "full_day", "multi_day"
+  departTime       String?
+  returnTime       String?
+  departureCity    String           @default("Dakar")
+  minGroupSize     Int              @default(1)
+  maxGroupSize     Int?
+  priceType        String           @default("on_demand") // "fixed", "on_demand", "variable_group"
+  priceAmount      Float?
+  currency         String           @default("EUR")
+  pricePerPerson   Float?
+  priceGroup       Float?
+  priceNote        String?          @default("Prix sur demande / Tarif variable selon le nombre de participants")
+  inclusions       String           @db.Text // JSON array as string
+  exclusions       String           @db.Text // JSON array as string
+  practicalInfo    String           @db.Text // JSON object or string
+  status           String           @default("PUBLISHED") // DRAFT, UPCOMING, PUBLISHED, ARCHIVED
+  isFeatured       Boolean          @default(false)
+  isPopular        Boolean          @default(false)
+  category         String           @default("Culture") // "Culture", "Nature", "Aventure", "Histoire", "Solidaire", "Gastronomie"
+  order            Int              @default(0)
+  destinationId    String?
+  destination      Destination?     @relation(fields: [destinationId], references: [id], onDelete: SetNull)
+  images           ExcursionImage[]
+  itinerary        ItineraryStep[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model ExcursionImage {
+  id          String    @id @default(uuid())
+  excursionId String
+  excursion   Excursion @relation(fields: [excursionId], references: [id], onDelete: Cascade)
+  url         String    @db.Text
+  alt         String?
+  caption     String?
+  isCover     Boolean   @default(false)
+  order       Int       @default(0)
+}
+
+model ItineraryStep {
+  id          String    @id @default(uuid())
+  excursionId String
+  excursion   Excursion @relation(fields: [excursionId], references: [id], onDelete: Cascade)
+  time        String // e.g. "08:30"
+  title       String
+  description String    @db.Text
+  order       Int       @default(0)
+}
+
+model Experience {
+  id               String   @id @default(uuid())
+  title            String
+  slug             String   @unique
+  category         String
+  description      String   @db.Text
+  shortDescription String   @db.Text
+  highlights       String   @db.Text // JSON array
+  imageUrl         String
+  ctaText          String   @default("Découvrir →")
+  ctaLink          String
+  isFeatured       Boolean  @default(true)
+  order            Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ThemeExperience {
+  id               String   @id @default(uuid())
+  title            String
+  slug             String   @unique
+  category         String
+  description      String   @db.Text
+  shortDescription String   @db.Text
+  highlights       String   @db.Text // JSON array
+  imageUrl         String
+  ctaText          String   @default("Découvrir →")
+  ctaLink          String
+  isFeatured       Boolean  @default(true)
+  order            Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Reservation {
+  id                String   @id @default(uuid())
+  refNumber         String   @unique // e.g. "STT-2026-0042"
+  fullName          String
+  email             String
+  phoneWhatsApp     String
+  numberOfTravelers Int      @default(1)
+  preferredDate     String
+  destination       String?
+  experienceType    String?
+  duration          String?
+  budget            String?
+  message           String?  @db.Text
+  status            String   @default("PENDING") // PENDING, CONTACTED, CONFIRMED, CANCELLED
+  notes             String?  @db.Text
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  fullName    String
+  country     String
+  avatarUrl   String?
+  rating      Int      @default(5)
+  comment     String   @db.Text
+  tourName    String?
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model GalleryImage {
+  id        String   @id @default(uuid())
+  title     String
+  category  String // "Dakar", "Gorée", "Nature", "Culture", "Gastronomie", "Villages", "Solidaire"
+  imageUrl  String
+  caption   String?
+  location  String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  fullName  String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
