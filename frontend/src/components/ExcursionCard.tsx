@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, MapPin, ArrowRight, Star, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { DetailedExcursion } from '../data/excursionsData';
 import { Excursion } from '../types';
 
 interface ExcursionCardProps {
   excursion: DetailedExcursion | Excursion;
   className?: string;
+  index?: number;
 }
 
-export const ExcursionCard: React.FC<ExcursionCardProps> = ({ excursion, className = '' }) => {
+export const ExcursionCard: React.FC<ExcursionCardProps> = ({ excursion, className = '', index = 0 }) => {
   const coverImage =
     excursion.images?.find((img) => img.isCover)?.url ||
     excursion.images?.[0]?.url ||
@@ -30,9 +32,17 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ excursion, classNa
       : 'Prix sur demande';
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 35, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{
+        duration: 0.65,
+        delay: Math.min((index % 3) * 0.1, 0.3),
+        ease: [0.22, 1, 0.36, 1],
+      }}
       data-cursor="image"
-      className={`card-luxury group bg-white rounded-[24px] overflow-hidden border border-[#C7A77A]/25 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#C7A77A]/50 transition-all duration-500 ${className}`}
+      className={`card-luxury group bg-white rounded-[24px] overflow-hidden border border-[#C7A77A]/25 flex flex-col justify-between shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:border-[#C7A77A]/60 transition-all duration-500 ${className}`}
     >
       {/* Top Image Container */}
       <div className="relative h-60 sm:h-64 w-full overflow-hidden bg-[#151515]">
@@ -122,7 +132,7 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ excursion, classNa
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default ExcursionCard;

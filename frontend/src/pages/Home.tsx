@@ -15,6 +15,8 @@ import { UpcomingDestinationsSection } from '../sections/home/UpcomingDestinatio
 import { GalleryPreviewSection } from '../sections/home/GalleryPreviewSection';
 import { FinalCtaSection } from '../sections/home/FinalCtaSection';
 
+import { ScrollReveal } from '../components/ui/ScrollReveal';
+
 export const Home: React.FC = () => {
   return (
     <PageTransition>
@@ -23,37 +25,59 @@ export const Home: React.FC = () => {
         <Hero />
 
         {/* 2. REASSURANCE & TRUST STRIP */}
-        <TrustBar />
+        <ScrollReveal animation="fade-up" delay={0.05} duration={0.65}>
+          <TrustBar />
+        </ScrollReveal>
 
         {/* 3. SECTION INTRO ÉDITORIALE (« Plus qu'un voyage, une rencontre avec le Sénégal. ») */}
-        <IntroEditorialSection />
+        <ScrollReveal animation="blur-reveal" duration={0.8}>
+          <IntroEditorialSection />
+        </ScrollReveal>
 
         {/* 4. EXPLOREZ DEPUIS DAKAR (Dakar, Gorée, Kayar, Lac Rose, Noflaye) */}
-        <ExploreDakarSection />
+        <ScrollReveal animation="fade-up" duration={0.8}>
+          <ExploreDakarSection />
+        </ScrollReveal>
 
         {/* 5. ÎLE DE GORÉE — GRANDE SECTION IMMERSIVE */}
-        <GoreeFeatureSection />
+        <ScrollReveal animation="scale-up" duration={0.85}>
+          <GoreeFeatureSection />
+        </ScrollReveal>
 
         {/* 6. JOAL-FADIOUTH (« Une journée pour s'évader. ») */}
-        <JoalFadiouthSection />
+        <ScrollReveal animation="fade-up" duration={0.8}>
+          <JoalFadiouthSection />
+        </ScrollReveal>
 
         {/* 7. PLANIFICATEUR INTERACTIF (« Quel Sénégal voulez-vous découvrir ? ») */}
-        <InteractivePlannerSection />
+        <ScrollReveal animation="fade-up" duration={0.75}>
+          <InteractivePlannerSection />
+        </ScrollReveal>
 
         {/* 8. VOYAGES À THÈMES TEASER (« Voyager autour d'une idée. ») */}
-        <ThemedTripsTeaserSection />
+        <ScrollReveal animation="fade-left" duration={0.8}>
+          <ThemedTripsTeaserSection />
+        </ScrollReveal>
 
         {/* 9. TOURISME SOLIDAIRE IMMERSIF (« Voyager avec un impact. ») */}
-        <SolidarityImpactSection />
+        <ScrollReveal animation="fade-right" duration={0.8}>
+          <SolidarityImpactSection />
+        </ScrollReveal>
 
         {/* 10. DESTINATIONS À VENIR (« Bientôt dans nos itinéraires ») */}
-        <UpcomingDestinationsSection />
+        <ScrollReveal animation="fade-up" duration={0.75}>
+          <UpcomingDestinationsSection />
+        </ScrollReveal>
 
         {/* 11. PREVIEW DE LA GALERIE */}
-        <GalleryPreviewSection />
+        <ScrollReveal animation="blur-reveal" duration={0.8}>
+          <GalleryPreviewSection />
+        </ScrollReveal>
 
         {/* 12. CTA FINAL MAJEUR (« Votre prochaine aventure commence ici. ») */}
-        <FinalCtaSection />
+        <ScrollReveal animation="scale-up" duration={0.85}>
+          <FinalCtaSection />
+        </ScrollReveal>
       </div>
     </PageTransition>
   );

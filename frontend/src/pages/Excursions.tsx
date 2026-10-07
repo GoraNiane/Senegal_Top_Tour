@@ -201,8 +201,8 @@ export const Excursions: React.FC = () => {
           {/* Cards Grid */}
           {filteredExcursions.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredExcursions.map((exc) => (
-                <ExcursionCard key={exc.id} excursion={exc} />
+              {filteredExcursions.map((exc, idx) => (
+                <ExcursionCard key={exc.id} excursion={exc} index={idx} />
               ))}
             </div>
           ) : (

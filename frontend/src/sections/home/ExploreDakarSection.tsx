@@ -4,6 +4,7 @@ import { Clock, ArrowRight, Star, MapPin } from 'lucide-react';
 import { Container } from '../../components/layout/Container';
 import { SectionTitle } from '../../components/ui/SectionTitle';
 import { Badge } from '../../components/ui/Badge';
+import { motion } from 'framer-motion';
 import { dakarExcursions } from '../../data/homepageData';
 
 export const ExploreDakarSection: React.FC = () => {
@@ -22,19 +23,27 @@ export const ExploreDakarSection: React.FC = () => {
 
           <Link
             to="/excursions"
-            className="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full border border-neutral-300 hover:border-[#173C32] text-[#173C32] hover:bg-[#173C32] hover:text-white transition-all w-fit"
+            className="inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full border border-neutral-300 hover:border-[#173C32] text-[#173C32] hover:bg-[#173C32] hover:text-white transition-all w-fit transform hover:scale-105 active:scale-95"
           >
             <span>Voir tout le catalogue</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* 5 Premium Excursion Cards Grid */}
+        {/* 5 Premium Excursion Cards Grid with Staggered Scroll Landing */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {dakarExcursions.map((exc, index) => (
-            <div
+            <motion.div
               key={exc.id}
-              className={`bg-[#F7F4EE] rounded-[28px] overflow-hidden border border-[#C7A77A]/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group text-left ${
+              initial={{ opacity: 0, y: 35, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className={`bg-[#F7F4EE] rounded-[28px] overflow-hidden border border-[#C7A77A]/30 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group text-left ${
                 index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
             >
@@ -115,7 +124,7 @@ export const ExploreDakarSection: React.FC = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>
