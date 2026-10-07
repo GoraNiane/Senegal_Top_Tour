@@ -97,8 +97,8 @@ export const PwaInstallPrompt: React.FC = () => {
       <div className="fixed bottom-5 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 animate-slideUp">
         <div className="bg-[#151515]/95 backdrop-blur-xl border border-[#C99A4A]/40 rounded-2xl p-4 shadow-2xl text-white flex items-center justify-between gap-3.5">
           {/* Logo / App Icon */}
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#173C32] to-[#0A1A15] border border-[#C99A4A]/50 flex items-center justify-center flex-shrink-0 shadow-md">
-            <Smartphone className="w-5 h-5 text-[#C99A4A]" />
+          <div className="w-11 h-11 rounded-xl bg-[#0B1E19] border border-[#C99A4A]/50 flex items-center justify-center flex-shrink-0 shadow-md overflow-hidden p-0.5">
+            <img src="/icons/icon-192x192.png" alt="Senegal Top Tour" className="w-full h-full object-contain rounded-lg" />
           </div>
 
           {/* Text Info */}
@@ -144,8 +144,8 @@ export const PwaInstallPrompt: React.FC = () => {
               <X className="w-4 h-4" />
             </button>
 
-            <div className="w-12 h-12 rounded-2xl bg-[#173C32] border border-[#C99A4A]/50 flex items-center justify-center mb-4 text-[#C99A4A]">
-              <Smartphone className="w-6 h-6" />
+            <div className="w-14 h-14 rounded-2xl bg-[#0B1E19] border border-[#C99A4A]/50 flex items-center justify-center mb-4 overflow-hidden p-1 shadow-lg">
+              <img src="/icons/icon-192x192.png" alt="Senegal Top Tour" className="w-full h-full object-contain rounded-xl" />
             </div>
 
             <h3 className="text-base font-serif font-bold text-[#F7F4EE] mb-2">
