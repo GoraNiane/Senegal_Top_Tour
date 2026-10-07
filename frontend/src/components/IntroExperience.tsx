@@ -27,15 +27,11 @@ export const IntroExperience: React.FC<IntroExperienceProps> = ({ onComplete, fo
   const [phase, setPhase] = useState<number>(1);
   const [activeItineraryIndex, setActiveItineraryIndex] = useState<number>(0);
 
-  // Expose dev replay helper on window
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      (window as any).replayIntro = () => {
-        sessionStorage.removeItem(STORAGE_KEY);
-        window.location.reload();
-      };
-    }
-  }, []);
+  const handleSkip = () => {
+    setPhase(5);
+    document.body.style.overflow = '';
+    if (onComplete) onComplete();
+  };
 
   // Preload hero background image immediately
   useEffect(() => {
@@ -43,20 +39,8 @@ export const IntroExperience: React.FC<IntroExperienceProps> = ({ onComplete, fo
     heroImage.src = '/hero.png';
   }, []);
 
-  // Check sessionStorage on mount
+  // Sequence orchestration
   useEffect(() => {
-    // If query string has ?intro=true, force reset
-    const urlParams = new URLSearchParams(window.location.search);
-    const hasIntroParam = urlParams.get('intro') === 'true' || urlParams.get('replay') === '1';
-
-    if (!forcePlay && !hasIntroParam) {
-      const hasSeenIntro = sessionStorage.getItem(STORAGE_KEY);
-      if (hasSeenIntro === 'true') {
-        if (onComplete) onComplete();
-        return;
-      }
-    }
-
     // Lock body scroll during intro
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -64,29 +48,27 @@ export const IntroExperience: React.FC<IntroExperienceProps> = ({ onComplete, fo
     // Reduced motion shortcut
     if (prefersReducedMotion) {
       const timer = setTimeout(() => {
-        sessionStorage.setItem(STORAGE_KEY, 'true');
         document.body.style.overflow = originalOverflow;
         if (onComplete) onComplete();
-      }, 700);
+      }, 500);
       return () => clearTimeout(timer);
     }
 
     // Sequence timing
-    // Phase 1 -> 2 at 750ms
-    const t1 = setTimeout(() => setPhase(2), 750);
-    // Phase 2 -> 3 at 1600ms
-    const t2 = setTimeout(() => setPhase(3), 1600);
-    // Phase 3 -> 4 at 2750ms
-    const t3 = setTimeout(() => setPhase(4), 2750);
-    // Phase 4 -> 5 (Exit to Hero) at 3600ms
+    // Phase 1 -> 2 at 650ms
+    const t1 = setTimeout(() => setPhase(2), 650);
+    // Phase 2 -> 3 at 1450ms
+    const t2 = setTimeout(() => setPhase(3), 1450);
+    // Phase 3 -> 4 at 2500ms
+    const t3 = setTimeout(() => setPhase(4), 2500);
+    // Phase 4 -> 5 (Exit to Hero) at 3400ms
     const t4 = setTimeout(() => {
       setPhase(5);
-      sessionStorage.setItem(STORAGE_KEY, 'true');
       setTimeout(() => {
         document.body.style.overflow = originalOverflow;
         if (onComplete) onComplete();
-      }, 650);
-    }, 3650);
+      }, 600);
+    }, 3400);
 
     return () => {
       document.body.style.overflow = originalOverflow;
@@ -95,7 +77,7 @@ export const IntroExperience: React.FC<IntroExperienceProps> = ({ onComplete, fo
       clearTimeout(t3);
       clearTimeout(t4);
     };
-  }, [forcePlay, prefersReducedMotion, onComplete]);
+  }, [prefersReducedMotion, onComplete]);
 
   // Itinerary step cycler in Phase 3
   useEffect(() => {
@@ -131,6 +113,15 @@ export const IntroExperience: React.FC<IntroExperienceProps> = ({ onComplete, fo
           {/* Subtle Ambient Solar Glows on Ivory Background */}
           <div className="absolute w-[500px] h-[500px] rounded-full bg-[#C99A4A]/12 blur-3xl pointer-events-none -top-24 -left-24 animate-pulse" />
           <div className="absolute w-[500px] h-[500px] rounded-full bg-[#173C32]/8 blur-3xl pointer-events-none -bottom-24 -right-24" />
+
+          {/* Quick Skip Button */}
+          <button
+            onClick={handleSkip}
+            aria-label="Passer l'introduction"
+            className="absolute top-5 right-5 sm:top-7 sm:right-8 z-30 text-[11px] font-semibold text-[#173C32]/75 hover:text-[#173C32] px-4 py-1.5 rounded-full border border-[#C7A77A]/40 hover:border-[#173C32] bg-white/70 hover:bg-white backdrop-blur-md transition-all duration-200 cursor-pointer shadow-sm uppercase tracking-wider"
+          >
+            {language === 'en' ? 'Skip ✕' : language === 'de' ? 'Überspringen ✕' : 'Passer ✕'}
+          </button>
 
           {/* Central Stage */}
           <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-lg w-full min-h-[360px]">

@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[580px] sm:min-h-[660px] h-[92vh] max-h-[960px] flex items-center justify-start overflow-hidden bg-[#151515] text-white">
+    <section className="relative w-full min-h-[620px] sm:min-h-[700px] h-[94vh] max-h-[980px] flex items-center justify-start overflow-hidden bg-[#151515] text-white">
       {/* Official hero.png Background Image from Project */}
       <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#151515]">
         <img
@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30 z-10" />
 
       {/* Hero Content positioned exactly like the reference */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 sm:pt-24 pb-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 sm:pt-32 pb-20">
         <div className="max-w-2xl text-left space-y-3.5 sm:space-y-5">
           {/* SÉNÉGAL TOP TOUR Subtitle */}
           <span className="text-[11px] sm:text-sm font-semibold uppercase tracking-[0.25em] sm:tracking-[0.28em] text-[#C99A4A] block">

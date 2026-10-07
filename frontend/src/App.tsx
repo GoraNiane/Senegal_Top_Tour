@@ -48,19 +48,14 @@ export const App: React.FC = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
 
-  // Play intro experience on first visit (with sessionStorage support)
+  // Play intro experience on initial site launch / Home start
   const [showIntro, setShowIntro] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
     // Don't show intro on admin or design system routes
     if (window.location.pathname.startsWith('/admin') || window.location.pathname.startsWith('/design-system')) {
       return false;
     }
-    // Check if intro has already been seen in this session
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('intro') === 'true' || urlParams.get('replay') === '1') {
-      return true;
-    }
-    return sessionStorage.getItem('senegal-top-tour-intro-seen') !== 'true';
+    return true;
   });
 
   const handleIntroComplete = () => {
