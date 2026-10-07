@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { IntroExperience } from './components/IntroExperience';
 import { WhatsAppButton } from './components/WhatsAppButton';
+import { PwaInstallPrompt } from './components/ui/PwaInstallPrompt';
 
 // Pages
 import { Home } from './pages/Home';
@@ -118,6 +119,9 @@ export const App: React.FC = () => {
 
       {/* Floating WhatsApp concierge badge (hidden on admin) */}
       {!isAdminRoute && <WhatsAppButton />}
+
+      {/* PWA Smart Install Prompt */}
+      <PwaInstallPrompt />
 
       {/* Global Footer (hidden on admin) */}
       {!isAdminRoute && <Footer />}

@@ -10,9 +10,11 @@ export const config = {
   whatsAppPhone: process.env.WHATSAPP_PHONE || '+221778848029',
   corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   cloudinary: {
-    cloudName: process.env.CLOUDINARY_CLOUD_NAME || '',
-    apiKey: process.env.CLOUDINARY_API_KEY || '',
-    apiSecret: process.env.CLOUDINARY_API_SECRET || '',
+    CLOUDINARY_CLOUD_NAME="e5o8ibjg"
+    
+    CLOUDINARY_API_KEY="739272595972187"
+    CLOUDINARY_API_SECRET="VNfMNQmzFRpU6xIFtBIqGBAKOCA"
+    CLOUDINARY_FOLDER="senegal_top_tour"
     url: process.env.CLOUDINARY_URL || '',
     folder: process.env.CLOUDINARY_FOLDER || 'senegal_top_tour',
   },
