@@ -614,14 +614,11 @@ export const seedDatabase = async () => {
   console.log('🎉 SENEGAL TOP TOUR Database seeding completed successfully!');
 };
 
-// Auto-execute if run directly
-if (import.meta.url === `file://${process.argv[1]}` || process.argv.includes('--run')) {
-  seedDatabase()
-    .catch((e) => {
-      console.error('❌ Error during seeding:', e);
-      process.exit(1);
-    })
-    .finally(async () => {
-      await prisma.$disconnect();
-    });
-}
+seedDatabase()
+  .catch((e) => {
+    console.error('❌ Error during seeding:', e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
