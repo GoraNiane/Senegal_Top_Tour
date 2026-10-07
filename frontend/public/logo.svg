@@ -1,44 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Semicircle sun fan dome -->
-  <path
-    d="M50 15 C30 15 14 31 14 52 L86 52 C86 31 70 15 50 15 Z"
-    fill="url(#goldSunGrad)"
-  />
-  <!-- Radiating sun ray lines in dome -->
-  <path d="M50 16 L50 52" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.85" />
-  <path d="M36 21 L44 52" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.85" />
-  <path d="M64 21 L56 52" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.85" />
-  <path d="M24 33 L38 52" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.85" />
-  <path d="M76 33 L62 52" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.85" />
-  <path d="M17 48 L32 52" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.75" />
-  <path d="M83 48 L68 52" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.75" />
-
-  <!-- Central Baobab tree silhouette inside dome -->
-  <path
-    d="M48 52 L48 40 C44 38 42 34 44 30 C46 26 54 26 56 30 C58 34 56 38 52 40 L52 52 Z"
-    fill="#173C32"
-  />
-
-  <!-- Golden Field / Horizon / Pirogue curves below -->
-  <path
-    d="M14 56 C28 56 46 62 50 78 C54 62 72 56 86 56 C74 76 58 84 50 84 C42 84 26 76 14 56 Z"
-    fill="url(#goldBaseGrad)"
-  />
-  <path d="M14 56 C32 60 48 66 50 84" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.65" />
-  <path d="M86 56 C68 60 52 66 50 84" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.65" />
-  <path d="M30 64 C42 68 48 74 50 84" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.55" />
-  <path d="M70 64 C58 68 52 74 50 84" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.55" />
-
-  <defs>
-    <linearGradient id="goldSunGrad" x1="50" y1="15" x2="50" y2="52" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F5D28A" />
-      <stop offset="0.5" stop-color="#E2B167" />
-      <stop offset="1" stop-color="#C99A4A" />
-    </linearGradient>
-    <linearGradient id="goldBaseGrad" x1="50" y1="56" x2="50" y2="84" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#E2B167" />
-      <stop offset="0.6" stop-color="#C99A4A" />
-      <stop offset="1" stop-color="#8A5A23" />
-    </linearGradient>
-  </defs>
+  <!-- Deep Black Background -->
+  <rect width="100" height="100" rx="20" fill="#111111" />
+  
+  <!-- Letter S in Pure White Centered -->
+  <text
+    x="50"
+    y="55"
+    text-anchor="middle"
+    dominant-baseline="central"
+    fill="#FFFFFF"
+    font-family="'Playfair Display', 'Cormorant Garamond', 'Georgia', serif"
+    font-size="64"
+    font-weight="700"
+    letter-spacing="-0.02em"
+  >S</text>
 </svg>
