@@ -177,6 +177,30 @@ export const Ecoconstruction: React.FC = () => {
           </div>
         </div>
 
+        {/* Volet Appui au Développement & BTS Callout */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="bg-white rounded-[28px] p-6 sm:p-10 border border-[#C7A77A]/30 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A]">
+                ☆▪︎ Volet Appui au Développement ▪︎☆
+              </span>
+              <h3 className="text-xl sm:text-2xl font-serif text-[#173C32]">
+                Booster l'écoconstruction : Banco & Briques en Terre Stabilisée (BTS)
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
+                Le volet Appui au développement de STT soutient activement les techniques et matériaux alternatifs locaux (banco et BTS), l'accès à l'eau potable et les énergies renouvelables au cœur des villages d'accueil.
+              </p>
+            </div>
+            <Link
+              to="/tourisme-solidaire#appui-au-developpement"
+              className="btn-gold py-3.5 px-6 text-xs uppercase tracking-wider font-bold rounded-full inline-flex items-center gap-2 shadow-md whitespace-nowrap"
+            >
+              <span>Voir le volet Appui au Développement</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
         {/* CTAs Section */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="bg-gradient-to-br from-[#173C32] to-[#122e26] text-white rounded-[32px] p-8 sm:p-12 shadow-xl space-y-6">

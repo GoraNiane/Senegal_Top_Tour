@@ -1,10 +1,10 @@
 /**
  * SENEGAL TOP TOUR — High Performance Progressive Web App (PWA) Service Worker
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 
-const CACHE_NAME = 'stt-pwa-v1.0.0';
-const DYNAMIC_CACHE = 'stt-dynamic-v1.0.0';
+const CACHE_NAME = 'stt-pwa-v1.1.0';
+const DYNAMIC_CACHE = 'stt-dynamic-v1.1.0';
 
 // Essential assets to cache immediately on install
 const PRECACHE_ASSETS = [

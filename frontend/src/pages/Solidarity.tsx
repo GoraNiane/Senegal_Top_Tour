@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   TreePine,
   ShieldCheck,
+  Target,
 } from 'lucide-react';
 import { PageTransition } from '../components/PageTransition';
 
@@ -167,11 +168,18 @@ export const Solidarity: React.FC = () => {
 
               <div className="pt-4 flex flex-wrap gap-4">
                 <a
-                  href="#tourisme-rural-integre"
+                  href="#appui-au-developpement"
                   className="btn-gold py-3.5 px-6 text-xs uppercase tracking-wider font-bold rounded-full inline-flex items-center gap-2 shadow-lg"
                 >
-                  <span>Découvrir notre démarche</span>
+                  <span>Appui au Développement</span>
                   <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#tourisme-rural-integre"
+                  className="py-3.5 px-6 rounded-full border border-white/30 text-white hover:bg-white/10 text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 transition-colors"
+                >
+                  <span>Concept Rural Intégré</span>
+                  <ArrowRight className="w-4 h-4 text-[#C99A4A]" />
                 </a>
               </div>
             </div>
@@ -230,45 +238,231 @@ export const Solidarity: React.FC = () => {
         </section>
 
         {/* ==================================================
-            3. SECTION PHILOSOPHIE (FONDAMENTALE)
+            3. SECTION APPUI AU DÉVELOPPEMENT (☆▪︎Appui au Développement☆▪︎)
            ================================================== */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
-          <div className="relative rounded-[36px] overflow-hidden bg-gradient-to-br from-[#173C32] to-[#122e26] text-white p-8 sm:p-14 lg:p-16 shadow-2xl border border-[#C7A77A]/30">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <Quote className="w-12 h-12 text-[#C99A4A] mx-auto opacity-80" />
-
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif leading-tight">
-                « Des projets construits avec les communautés, pas imposés aux communautés. »
+        <section id="appui-au-developpement" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-32">
+          <div className="bg-white rounded-[32px] p-8 sm:p-12 lg:p-16 border border-[#C7A77A]/30 shadow-sm space-y-16">
+            
+            {/* Header / Intro */}
+            <div className="text-center max-w-3xl mx-auto space-y-4">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#173C32]/10 text-[#173C32] text-xs font-bold uppercase tracking-[0.25em] border border-[#173C32]/15">
+                <Sparkles className="w-3.5 h-3.5 text-[#C99A4A]" />
+                <span>☆▪︎ Appui au Développement ▪︎☆</span>
+              </span>
+              
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#173C32] leading-tight">
+                Appui au Développement & Solidarité
               </h2>
 
-              <div className="w-20 h-1 bg-[#C99A4A] mx-auto rounded-full" />
-
-              <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed max-w-3xl mx-auto">
-                La véritable solidarité repose sur l’écoute et le respect mutuel. <strong>Les projets sont rigoureusement sélectionnés après concertation avec les populations locales</strong> (chefs de village, comités de développement, groupements de femmes et jeunes), afin de répondre à leurs besoins réels et prioritaires.
+              <p className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed">
+                Le volet <strong>Appui au développement</strong> de STT est fondé sur la solidarité avec les populations d'accueil.
               </p>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-xs text-white/90">
-                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-                  <span className="text-[#C99A4A] font-bold block mb-1">CONCERTATION</span>
-                  <p className="font-light text-white/80">Décision collective avec les instances villageoises.</p>
+            {/* PARTIE 1 : LES OBJECTIFS DE STT */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 border-b border-[#C7A77A]/20 pb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#173C32] text-[#C99A4A] flex items-center justify-center font-serif font-bold shadow-md">
+                  <Target className="w-5 h-5" />
                 </div>
-                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-                  <span className="text-[#C99A4A] font-bold block mb-1">AUTONOMIE</span>
-                  <p className="font-light text-white/80">Appropriation durable par les bénéficiaires locaux.</p>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A85D3A] block">
+                    Orientations Stratégiques
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-serif text-[#173C32] font-semibold">
+                    Voici les objectifs de STT :
+                  </h3>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10">
-                  <span className="text-[#C99A4A] font-bold block mb-1">TRANSPARENCE</span>
-                  <p className="font-light text-white/80">Affectation claire et traçabilité des soutiens.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Objectif 1 */}
+                <div className="bg-[#F7F4EE] rounded-2xl p-6 sm:p-7 border border-[#C7A77A]/25 flex flex-col justify-between space-y-4 hover:border-[#173C32]/40 transition-all duration-300">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#173C32]/10 text-[#173C32] flex items-center justify-center">
+                      <Compass className="w-5 h-5 text-[#C99A4A]" />
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A] block">
+                      Immersion rurale vs balnéaire
+                    </span>
+                    <h4 className="text-base font-serif font-bold text-[#173C32]">
+                      Campements villageois communautaires ou privés
+                    </h4>
+                    <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                      Inviter les touristes à résider dans des campements villageois communautaires ou privés. Le but est de faciliter l'immersion dans le monde rural, ce que le tourisme balnéaire ne permet pas.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-semibold text-[#173C32] flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C99A4A]" />
+                    <span>Immersion authentique & respectueuse</span>
+                  </div>
+                </div>
+
+                {/* Objectif 2 */}
+                <div className="bg-[#F7F4EE] rounded-2xl p-6 sm:p-7 border border-[#C7A77A]/25 flex flex-col justify-between space-y-4 hover:border-[#173C32]/40 transition-all duration-300">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#173C32]/10 text-[#173C32] flex items-center justify-center">
+                      <Users className="w-5 h-5 text-[#C99A4A]" />
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A] block">
+                      Échanges durables & Délais courts
+                    </span>
+                    <h4 className="text-base font-serif font-bold text-[#173C32]">
+                      Coopération décentralisée
+                    </h4>
+                    <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                      La rencontre entre touristes et villageois pourrait être le point de départ pour des échanges durables et d'éventuels projets de coopération entre les villages d'accueil et les touristes. À noter que nous souhaiterions privilégier la <strong>Coopération décentralisée</strong> qui semble plus apte à agir dans des délais relativement courts.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-semibold text-[#173C32] flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C99A4A]" />
+                    <span>Lien direct & partenariats d'action</span>
+                  </div>
+                </div>
+
+                {/* Objectif 3 */}
+                <div className="bg-[#F7F4EE] rounded-2xl p-6 sm:p-7 border border-[#C7A77A]/25 flex flex-col justify-between space-y-4 hover:border-[#173C32]/40 transition-all duration-300">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#173C32]/10 text-[#173C32] flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-[#C99A4A]" />
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A] block">
+                      Écoconstruction, Eau & Énergie
+                    </span>
+                    <h4 className="text-base font-serif font-bold text-[#173C32]">
+                      Soutien aux initiatives locales & BTS
+                    </h4>
+                    <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                      Soutenir des initiatives visant à soutenir l’éducation, l’accès à l’eau potable, l’amélioration de la gestion des déchets, la promotion des énergies renouvelables et des techniques et matériaux de construction alternatifs, comme le <strong>banco</strong> et les <strong>briques en terre stabilisée dites aussi BTS</strong>. Ce volet servirait à booster l'écoconstruction.
+                    </p>
+                  </div>
+                  <div className="pt-2 text-[11px] font-semibold text-[#173C32] flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C99A4A]" />
+                    <span>Banco, BTS & transition écologique</span>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* PARTIE 2 : NOTRE MÉTHODE DE TRAVAIL */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 border-b border-[#C7A77A]/20 pb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#C99A4A] text-[#173C32] flex items-center justify-center font-serif font-bold shadow-md">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A85D3A] block">
+                    Éthique & Déontologie
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-serif text-[#173C32] font-semibold">
+                    Notre méthode de travail est indiquée ci-dessous :
+                  </h3>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Principe 1 */}
+                <div className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#C7A77A]/30 space-y-3 hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#173C32] text-[#C99A4A]">
+                      Principe 01
+                    </span>
+                    <CheckCircle2 className="w-4 h-4 text-[#173C32]" />
+                  </div>
+                  <h4 className="text-lg font-serif font-bold text-[#173C32]">
+                    Pas de projets parachutés !
+                  </h4>
+                  <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                    Les projets retenus sont sélectionnés et gérés en concertation avec les responsables des villages d'accueil.
+                  </p>
+                  <div className="pt-2 border-t border-[#C7A77A]/15 text-[11px] text-neutral-500 italic">
+                    Concertation permanente avec les chefs de village et comités villageois.
+                  </div>
+                </div>
+
+                {/* Principe 2 */}
+                <div className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#C7A77A]/30 space-y-3 hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#173C32] text-[#C99A4A]">
+                      Principe 02
+                    </span>
+                    <CheckCircle2 className="w-4 h-4 text-[#173C32]" />
+                  </div>
+                  <h4 className="text-lg font-serif font-bold text-[#173C32]">
+                    Aucune obligation de résultat !
+                  </h4>
+                  <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                    En d'autres termes, ce n'est pas parce qu'un projet est validé que son financement et son exécution sont d'avance garantis.
+                  </p>
+                  <div className="pt-2 border-t border-[#C7A77A]/15 text-[11px] text-neutral-500 italic">
+                    Transparence et lucidité budgétaire : pas de fausses promesses.
+                  </div>
+                </div>
+
+                {/* Principe 3 */}
+                <div className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#C7A77A]/30 space-y-3 hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#173C32] text-[#C99A4A]">
+                      Principe 03
+                    </span>
+                    <CheckCircle2 className="w-4 h-4 text-[#173C32]" />
+                  </div>
+                  <h4 className="text-lg font-serif font-bold text-[#173C32]">
+                    Participation active du village d'accueil
+                  </h4>
+                  <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                    Participation du village d'accueil dans le financement de ses projets. Cette participation pourrait même être symbolique, l'essentiel étant d'éviter d'avoir une mentalité d'éternels assistés.
+                  </p>
+                  <div className="pt-2 border-t border-[#C7A77A]/15 text-[11px] text-neutral-500 italic">
+                    Dignité, autonomie et co-responsabilité villageoise.
+                  </div>
+                </div>
+
+                {/* Principe 4 */}
+                <div className="p-6 rounded-2xl bg-[#F7F4EE] border border-[#C7A77A]/30 space-y-3 hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#173C32] text-[#C99A4A]">
+                      Principe 04
+                    </span>
+                    <CheckCircle2 className="w-4 h-4 text-[#173C32]" />
+                  </div>
+                  <h4 className="text-lg font-serif font-bold text-[#173C32]">
+                    Visibilité & Collaborations durables
+                  </h4>
+                  <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
+                    Donner une plus grande visibilité aux villages d'accueil et favoriser la réalisation de projets sociaux. D'où la possibilité de favoriser une collaboration susceptible de déboucher sur des projets de développement et des échanges culturels durables.
+                  </p>
+                  <div className="pt-2 border-t border-[#C7A77A]/15 text-[11px] text-neutral-500 italic">
+                    Rayonnement social, valorisation du patrimoine et liens pérennes.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Citation synthèse */}
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#173C32] to-[#122e26] text-white p-6 sm:p-10 shadow-lg text-center space-y-4">
+              <Quote className="w-8 h-8 text-[#C99A4A] mx-auto opacity-80" />
+              <blockquote className="text-xl sm:text-2xl font-serif leading-relaxed max-w-3xl mx-auto">
+                « Des projets construits avec les communautés, jamais parachutés, fondés sur l'écoute et l'échange mutuel. »
+              </blockquote>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs text-[#C99A4A] font-semibold uppercase tracking-wider">
+                <span>Concertation</span>
+                <span>•</span>
+                <span>Dignité</span>
+                <span>•</span>
+                <span>Coopération décentralisée</span>
+                <span>•</span>
+                <span>Écoconstruction</span>
+              </div>
+            </div>
+
           </div>
         </section>
 
         {/* ==================================================
             4. LES 4 DOMAINES D'ACTION
            ================================================== */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <section id="domaines-action" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-32">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <span className="text-xs uppercase tracking-[0.25em] text-[#A85D3A] font-bold">
               Axes d’Engagement

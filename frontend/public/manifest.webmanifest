@@ -55,10 +55,10 @@
       "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Voyages à Thèmes & Solidaire",
-      "short_name": "Thématiques",
-      "description": "Rencontres entre homologues et tourisme solidaire",
-      "url": "/voyages-a-themes",
+      "name": "Appui au Développement & Solidarité",
+      "short_name": "Solidarité",
+      "description": "Objectifs de STT & démarche éthique avec les villages",
+      "url": "/tourisme-solidaire#appui-au-developpement",
       "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
     },
     {

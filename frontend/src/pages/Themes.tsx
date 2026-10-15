@@ -402,22 +402,28 @@ export const Themes: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Briques compressées (BTC)</span>
+                    <span>Briques en terre stabilisée (BTS)</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Ventilation passive</span>
+                    <span>Appui au Développement STT</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-neutral-100">
+              <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row gap-2">
                 <Link
                   to="/voyages-a-themes/ecoconstruction"
-                  className="btn-primary text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 w-full justify-center"
+                  className="btn-primary text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 flex-1 justify-center"
                 >
                   <span>Explorer l’écoconstruction</span>
                   <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/tourisme-solidaire#appui-au-developpement"
+                  className="px-4 py-2.5 rounded-full border border-[#173C32]/20 hover:bg-[#173C32]/5 text-[#173C32] text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-1 transition-colors"
+                >
+                  <span>Charte STT</span>
                 </Link>
               </div>
             </div>

@@ -74,17 +74,20 @@ export const Navbar: React.FC = () => {
       { name: 'Écoconstruction & Banco', link: '/voyages-a-themes/ecoconstruction', desc: 'Architecture de terre & matériaux durables' },
     ],
     solidarite: language === 'de' ? [
-      { name: 'Konzept des integrierten Dorftourismus', link: '/tourisme-solidaire', desc: 'Ein ethischer Ansatz gemeinsam mit den Dörfern' },
-      { name: 'Bildung & Buschschulen', link: '/tourisme-solidaire', desc: 'Renovierung von Klassenräumen & Sanitäranlagen' },
-      { name: 'Gesundheit & Hygiene', link: '/tourisme-solidaire', desc: 'Direkte Unterstützung ländlicher Krankenstationen' },
+      { name: 'Entwicklungsförderung STT', link: '/tourisme-solidaire#appui-au-developpement', desc: 'Ziele & partizipative Dorfmethodik' },
+      { name: 'Konzept des integrierten Dorftourismus', link: '/tourisme-solidaire#tourisme-rural-integre', desc: 'Ein ethischer Ansatz gemeinsam mit den Dörfern' },
+      { name: 'Bildung & Buschschulen', link: '/tourisme-solidaire#domaines-action', desc: 'Renovierung von Klassenräumen & Sanitäranlagen' },
+      { name: 'Gesundheit & Hygiene', link: '/tourisme-solidaire#domaines-action', desc: 'Direkte Unterstützung ländlicher Krankenstationen' },
     ] : language === 'en' ? [
-      { name: 'Integrated Rural Tourism Concept', link: '/tourisme-solidaire', desc: 'An ethical approach built with villages' },
-      { name: 'Education & Bush Schools', link: '/tourisme-solidaire', desc: 'Renovating classrooms & sanitation' },
-      { name: 'Healthcare & Sanitation', link: '/tourisme-solidaire', desc: 'Direct support to rural clinics' },
+      { name: 'STT Development Support', link: '/tourisme-solidaire#appui-au-developpement', desc: 'Objectives & collaborative village methodology' },
+      { name: 'Integrated Rural Tourism Concept', link: '/tourisme-solidaire#tourisme-rural-integre', desc: 'An ethical approach built with villages' },
+      { name: 'Education & Bush Schools', link: '/tourisme-solidaire#domaines-action', desc: 'Renovating classrooms & sanitation' },
+      { name: 'Healthcare & Sanitation', link: '/tourisme-solidaire#domaines-action', desc: 'Direct support to rural clinics' },
     ] : [
-      { name: 'Concept du Tourisme Rural Intégré', link: '/tourisme-solidaire', desc: 'Une démarche éthique construite avec les villages' },
-      { name: 'Éducation & Écoles de brousse', link: '/tourisme-solidaire', desc: 'Rénovation de classes & latrines' },
-      { name: 'Santé & Assainissement', link: '/tourisme-solidaire', desc: 'Soutien aux dispensaires ruraux' },
+      { name: '☆ Appui au Développement', link: '/tourisme-solidaire#appui-au-developpement', desc: 'Objectifs de STT & méthode de travail avec les villages' },
+      { name: 'Concept du Tourisme Rural Intégré', link: '/tourisme-solidaire#tourisme-rural-integre', desc: 'Une démarche éthique construite avec les villages' },
+      { name: 'Éducation & Écoles de brousse', link: '/tourisme-solidaire#domaines-action', desc: 'Rénovation de classes & latrines' },
+      { name: 'Santé, Eau & Écoconstruction (BTS)', link: '/tourisme-solidaire#domaines-action', desc: 'Dispensaires ruraux & habitat banco' },
     ],
   };
 
