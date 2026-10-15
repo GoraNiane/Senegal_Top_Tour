@@ -4,7 +4,6 @@ import { Clock, ArrowRight, Star, MapPin } from 'lucide-react';
 import { Container } from '../../components/layout/Container';
 import { SectionTitle } from '../../components/ui/SectionTitle';
 import { Badge } from '../../components/ui/Badge';
-import { motion } from 'framer-motion';
 import { dakarExcursions } from '../../data/homepageData';
 
 export const ExploreDakarSection: React.FC = () => {
@@ -33,17 +32,9 @@ export const ExploreDakarSection: React.FC = () => {
         {/* 5 Premium Excursion Cards Grid with Staggered Scroll Landing */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {dakarExcursions.map((exc, index) => (
-            <motion.div
+            <div
               key={exc.id}
-              initial={{ opacity: 0, y: 35, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className={`bg-[#F7F4EE] rounded-[28px] overflow-hidden border border-[#C7A77A]/30 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group text-left ${
+              className={`bg-[#F7F4EE] rounded-[28px] overflow-hidden border border-[#C7A77A]/30 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group text-left ${
                 index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
             >
@@ -124,7 +115,7 @@ export const ExploreDakarSection: React.FC = () => {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>

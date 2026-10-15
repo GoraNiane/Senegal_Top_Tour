@@ -21,40 +21,40 @@ interface ScrollRevealProps extends HTMLMotionProps<'div'> {
   once?: boolean;
 }
 
-const luxuryEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const luxuryEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const variantsMap: Record<ScrollAnimationType, Variants> = {
   'fade-up': {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 16 },
     visible: { opacity: 1, y: 0 },
   },
   'fade-down': {
-    hidden: { opacity: 0, y: -40 },
+    hidden: { opacity: 0, y: -16 },
     visible: { opacity: 1, y: 0 },
   },
   'fade-left': {
-    hidden: { opacity: 0, x: -45 },
+    hidden: { opacity: 0, x: -16 },
     visible: { opacity: 1, x: 0 },
   },
   'fade-right': {
-    hidden: { opacity: 0, x: 45 },
+    hidden: { opacity: 0, x: 16 },
     visible: { opacity: 1, x: 0 },
   },
   'scale-up': {
-    hidden: { opacity: 0, scale: 0.92 },
+    hidden: { opacity: 0, scale: 0.98 },
     visible: { opacity: 1, scale: 1 },
   },
   'blur-reveal': {
-    hidden: { opacity: 0, y: 35, filter: 'blur(8px)' },
-    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: 14 },
+    visible: { opacity: 1, y: 0 },
   },
   'stagger-container': {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.05,
+        staggerChildren: 0.06,
+        delayChildren: 0.02,
       },
     },
   },
@@ -64,10 +64,10 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   animation = 'fade-up',
   delay = 0,
-  duration = 0.75,
-  threshold = 0.12,
+  duration = 0.4,
+  threshold = 0.01,
   className = '',
-  staggerDelay = 0.12,
+  staggerDelay = 0.06,
   once = true,
   ...props
 }) => {
@@ -88,8 +88,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
         }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once, amount: threshold, margin: '0px 0px -50px 0px' }}
-        className={className}
+        viewport={{ once, amount: threshold, margin: '0px 0px 200px 0px' }}
+        className={`will-change-transform ${className}`}
         {...props}
       >
         {children}
@@ -102,13 +102,13 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
       variants={selectedVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: threshold, margin: '0px 0px -50px 0px' }}
+      viewport={{ once, amount: threshold, margin: '0px 0px 200px 0px' }}
       transition={{
         duration,
         delay,
         ease: luxuryEase,
       }}
-      className={className}
+      className={`will-change-transform ${className}`}
       {...props}
     >
       {children}
@@ -123,35 +123,34 @@ export const ScrollRevealItem: React.FC<{
 }> = ({ children, className = '', animation = 'fade-up' }) => {
   const itemVariants: Record<string, Variants> = {
     'fade-up': {
-      hidden: { opacity: 0, y: 35 },
+      hidden: { opacity: 0, y: 12 },
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.65, ease: luxuryEase },
+        transition: { duration: 0.35, ease: luxuryEase },
       },
     },
     'scale-up': {
-      hidden: { opacity: 0, scale: 0.94, y: 20 },
+      hidden: { opacity: 0, scale: 0.98, y: 8 },
       visible: {
         opacity: 1,
-        scale: 1,
         y: 0,
-        transition: { duration: 0.65, ease: luxuryEase },
+        scale: 1,
+        transition: { duration: 0.35, ease: luxuryEase },
       },
     },
     'blur-reveal': {
-      hidden: { opacity: 0, y: 25, filter: 'blur(6px)' },
+      hidden: { opacity: 0, y: 10 },
       visible: {
         opacity: 1,
         y: 0,
-        filter: 'blur(0px)',
-        transition: { duration: 0.65, ease: luxuryEase },
+        transition: { duration: 0.35, ease: luxuryEase },
       },
     },
   };
 
   return (
-    <motion.div variants={itemVariants[animation]} className={className}>
+    <motion.div variants={itemVariants[animation]} className={`will-change-transform ${className}`}>
       {children}
     </motion.div>
   );
