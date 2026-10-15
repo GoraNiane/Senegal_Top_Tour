@@ -247,7 +247,7 @@ export const Solidarity: React.FC = () => {
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#173C32]/10 text-[#173C32] text-xs font-bold uppercase tracking-[0.25em] border border-[#173C32]/15">
                 <Sparkles className="w-3.5 h-3.5 text-[#C99A4A]" />
-                <span>☆▪︎ Appui au Développement ▪︎☆</span>
+                <span>☆▪︎☆ Appui au Développement ☆▪︎☆</span>
               </span>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#173C32] leading-tight">
@@ -255,11 +255,11 @@ export const Solidarity: React.FC = () => {
               </h2>
 
               <p className="text-base sm:text-lg text-neutral-700 font-light leading-relaxed">
-                Le volet <strong>Appui au développement</strong> de STT est fondé sur la solidarité avec les populations d'accueil.
+                Le volet <strong>Appui au développement</strong> de Sénégal Top Tour est fondé sur la solidarité avec les populations d'accueil.
               </p>
             </div>
 
-            {/* PARTIE 1 : LES OBJECTIFS DE STT */}
+            {/* PARTIE 1 : LES OBJECTIFS DE SÉNÉGAL TOP TOUR */}
             <div className="space-y-8">
               <div className="flex items-center gap-3 border-b border-[#C7A77A]/20 pb-4">
                 <div className="w-10 h-10 rounded-xl bg-[#173C32] text-[#C99A4A] flex items-center justify-center font-serif font-bold shadow-md">
@@ -270,7 +270,7 @@ export const Solidarity: React.FC = () => {
                     Orientations Stratégiques
                   </span>
                   <h3 className="text-xl sm:text-2xl font-serif text-[#173C32] font-semibold">
-                    Voici les objectifs de STT :
+                    Voici nos objectifs :
                   </h3>
                 </div>
               </div>
@@ -283,18 +283,21 @@ export const Solidarity: React.FC = () => {
                       <Compass className="w-5 h-5 text-[#C99A4A]" />
                     </div>
                     <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A] block">
-                      Immersion rurale vs balnéaire
+                      Immersion rurale & Séjour flexible
                     </span>
                     <h4 className="text-base font-serif font-bold text-[#173C32]">
                       Campements villageois communautaires ou privés
                     </h4>
                     <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
-                      Inviter les touristes à résider dans des campements villageois communautaires ou privés. Le but est de faciliter l'immersion dans le monde rural, ce que le tourisme balnéaire ne permet pas.
+                      Héberger les touristes dans des campements villageois communautaires ou privés. Le but est de faciliter l'immersion dans le monde rural, ce que le tourisme balnéaire ne permet pas.
                     </p>
+                    <div className="p-3 rounded-xl bg-white/80 border border-[#C7A77A]/20 text-[11.5px] text-[#173C32] font-medium leading-relaxed">
+                      💡 <strong>Séjour flexible :</strong> pour un séjour de dix jours, par exemple, les touristes pourraient avoir deux à trois nuitées dans un campement villageois et avoir les autres nuitées dans un hôtel classique.
+                    </div>
                   </div>
                   <div className="pt-2 text-[11px] font-semibold text-[#173C32] flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C99A4A]" />
-                    <span>Immersion authentique & respectueuse</span>
+                    <span>Immersion authentique & équilibrée</span>
                   </div>
                 </div>
 
@@ -330,15 +333,15 @@ export const Solidarity: React.FC = () => {
                       Écoconstruction, Eau & Énergie
                     </span>
                     <h4 className="text-base font-serif font-bold text-[#173C32]">
-                      Soutien aux initiatives locales & BTS
+                      Appui aux initiatives locales & BTS
                     </h4>
                     <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
-                      Soutenir des initiatives visant à soutenir l’éducation, l’accès à l’eau potable, l’amélioration de la gestion des déchets, la promotion des énergies renouvelables et des techniques et matériaux de construction alternatifs, comme le <strong>banco</strong> et les <strong>briques en terre stabilisée dites aussi BTS</strong>. Ce volet servirait à booster l'écoconstruction.
+                      Appuyer des initiatives visant à soutenir l’éducation, l’accès à l’eau potable, l’amélioration de la gestion des déchets, la promotion des énergies renouvelables et des techniques et matériaux de construction alternatifs, comme le <strong>banco</strong> et les <strong>briques en terre stabilisée dites aussi BTS</strong>. Ce volet servirait à booster l'écoconstruction.
                     </p>
                   </div>
                   <div className="pt-2 text-[11px] font-semibold text-[#173C32] flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#C99A4A]" />
-                    <span>Banco, BTS & transition écologique</span>
+                    <span>Banco, BTS & écoconstruction</span>
                   </div>
                 </div>
               </div>
@@ -411,7 +414,7 @@ export const Solidarity: React.FC = () => {
                     Participation active du village d'accueil
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-700 font-light leading-relaxed">
-                    Participation du village d'accueil dans le financement de ses projets. Cette participation pourrait même être symbolique, l'essentiel étant d'éviter d'avoir une mentalité d'éternels assistés.
+                    Participation du village d'accueil dans le financement de ses projets. Cette participation pourrait même être symbolique, l'essentiel étant de ne pas susciter ou entretenir une mentalité d'éternels assistés.
                   </p>
                   <div className="pt-2 border-t border-[#C7A77A]/15 text-[11px] text-neutral-500 italic">
                     Dignité, autonomie et co-responsabilité villageoise.

@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
       { name: 'Education & Bush Schools', link: '/tourisme-solidaire#domaines-action', desc: 'Renovating classrooms & sanitation' },
       { name: 'Healthcare & Sanitation', link: '/tourisme-solidaire#domaines-action', desc: 'Direct support to rural clinics' },
     ] : [
-      { name: '☆ Appui au Développement', link: '/tourisme-solidaire#appui-au-developpement', desc: 'Objectifs de STT & méthode de travail avec les villages' },
+      { name: '☆▪︎☆ Appui au Développement', link: '/tourisme-solidaire#appui-au-developpement', desc: 'Objectifs de Sénégal Top Tour & méthode avec les villages' },
       { name: 'Concept du Tourisme Rural Intégré', link: '/tourisme-solidaire#tourisme-rural-integre', desc: 'Une démarche éthique construite avec les villages' },
       { name: 'Éducation & Écoles de brousse', link: '/tourisme-solidaire#domaines-action', desc: 'Rénovation de classes & latrines' },
       { name: 'Santé, Eau & Écoconstruction (BTS)', link: '/tourisme-solidaire#domaines-action', desc: 'Dispensaires ruraux & habitat banco' },

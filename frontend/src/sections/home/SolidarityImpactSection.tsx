@@ -18,21 +18,21 @@ export const SolidarityImpactSection: React.FC = () => {
 
   const objectifsList = [
     {
-      badge: 'Immersion Rurale',
-      title: 'Campements villageois communautaires ou privés',
-      desc: 'Inviter les touristes à résider dans des campements villageois communautaires ou privés. Le but est de faciliter l\'immersion dans le monde rural, ce que le tourisme balnéaire ne permet pas.',
+      badge: 'Immersion & Flexibilité',
+      title: 'Hébergement en campements villageois (communautaires ou privés)',
+      desc: 'Héberger les touristes dans des campements villageois communautaires ou privés pour faciliter l\'immersion dans le monde rural (ce que le tourisme balnéaire ne permet pas). Séjour flexible : pour 10 jours, par exemple 2 à 3 nuitées en campement villageois et le reste en hôtel classique.',
       icon: Compass,
     },
     {
-      badge: 'Coopération Agile',
-      title: 'Coopération décentralisée & échanges durables',
-      desc: 'La rencontre entre touristes et villageois pourrait être le point de départ pour des échanges durables et d\'éventuels projets de coopération. Nous privilégions la Coopération décentralisée, apte à agir dans des délais courts.',
+      badge: 'Coopération Décentralisée',
+      title: 'Échanges durables & Projets de coopération',
+      desc: 'La rencontre entre touristes et villageois comme point de départ pour des échanges durables et d\'éventuels projets de coopération. Nous privilégions la Coopération décentralisée, plus apte à agir dans des délais relativement courts.',
       icon: Users,
     },
     {
       badge: 'Transition & Écoconstruction',
-      title: 'Soutien aux initiatives locales, Banco & BTS',
-      desc: 'Soutenir l’éducation, l’accès à l’eau potable, la gestion des déchets, les énergies renouvelables et les matériaux alternatifs comme le banco et les briques en terre stabilisée (BTS) pour booster l\'écoconstruction.',
+      title: 'Appui aux initiatives locales, Banco & BTS',
+      desc: 'Appuyer des initiatives visant à soutenir l’éducation, l’accès à l’eau potable, la gestion des déchets, la promotion des énergies renouvelables et des matériaux alternatifs (banco et briques en terre stabilisée - BTS) pour booster l\'écoconstruction.',
       icon: Sparkles,
     },
   ];
@@ -41,7 +41,7 @@ export const SolidarityImpactSection: React.FC = () => {
     {
       badge: 'Règle #1',
       title: 'Pas de projets parachutés !',
-      desc: 'Les projets retenus sont sélectionnés et gérés en concertation permanente avec les responsables des villages d\'accueil.',
+      desc: 'Les projets retenus sont sélectionnés et gérés en concertation avec les responsables des villages d\'accueil.',
     },
     {
       badge: 'Règle #2',
@@ -50,13 +50,13 @@ export const SolidarityImpactSection: React.FC = () => {
     },
     {
       badge: 'Règle #3',
-      title: 'Participation du village d\'accueil',
-      desc: 'Participation du village dans le financement de ses projets (même symbolique), pour préserver la dignité et éviter la mentalité d\'assistés.',
+      title: 'Participation active du village',
+      desc: 'Participation du village d\'accueil dans le financement de ses projets (même symbolique), l\'essentiel étant de ne pas susciter ou entretenir une mentalité d\'éternels assistés.',
     },
     {
       badge: 'Règle #4',
       title: 'Visibilité & Échanges durables',
-      desc: 'Donner une plus grande visibilité aux villages d\'accueil et favoriser des collaborations durables sur des projets sociaux et culturels.',
+      desc: 'Donner une plus grande visibilité aux villages d\'accueil et favoriser des collaborations durables sur des projets de développement et des échanges culturels.',
     },
   ];
 
@@ -70,7 +70,7 @@ export const SolidarityImpactSection: React.FC = () => {
           {/* Left Column : Editorial Pitch (5 Cols) */}
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
             <Badge variant="gold" icon={<Sparkles className="w-3.5 h-3.5 text-[#C99A4A]" />}>
-              ☆▪︎ APPUI AU DÉVELOPPEMENT ▪︎☆
+              ☆▪︎☆ APPUI AU DÉVELOPPEMENT ☆▪︎☆
             </Badge>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -78,7 +78,7 @@ export const SolidarityImpactSection: React.FC = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-[#C7A77A] font-serif italic leading-relaxed">
-              « Le volet Appui au développement de STT est fondé sur la solidarité avec les populations d'accueil. »
+              « Le volet Appui au développement de Sénégal Top Tour est fondé sur la solidarité avec les populations d'accueil. »
             </p>
 
             <p className="text-sm sm:text-base text-white/80 font-light leading-relaxed">

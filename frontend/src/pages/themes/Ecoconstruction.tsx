@@ -182,13 +182,13 @@ export const Ecoconstruction: React.FC = () => {
           <div className="bg-white rounded-[28px] p-6 sm:p-10 border border-[#C7A77A]/30 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#A85D3A]">
-                ☆▪︎ Volet Appui au Développement ▪︎☆
+                ☆▪︎☆ Appui au Développement ☆▪︎☆
               </span>
               <h3 className="text-xl sm:text-2xl font-serif text-[#173C32]">
                 Booster l'écoconstruction : Banco & Briques en Terre Stabilisée (BTS)
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
-                Le volet Appui au développement de STT soutient activement les techniques et matériaux alternatifs locaux (banco et BTS), l'accès à l'eau potable et les énergies renouvelables au cœur des villages d'accueil.
+                Le volet Appui au développement de Sénégal Top Tour appuie activement les techniques et matériaux alternatifs locaux (banco et BTS), l'accès à l'eau potable et les énergies renouvelables au cœur des villages d'accueil.
               </p>
             </div>
             <Link
