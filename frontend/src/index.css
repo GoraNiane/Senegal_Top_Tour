@@ -166,7 +166,7 @@
 .animate-marquee {
   display: inline-flex;
   width: max-content;
-  animation: tickerMarquee 45s linear infinite;
+  animation: tickerMarquee 95s linear infinite;
   will-change: transform;
 }
 
